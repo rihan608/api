@@ -11,7 +11,7 @@ const getAllProducts=async(req,res)=>{
     }
     let apiData=Product.find(queryObject);
     let page=Number(req.query.page) || 1;
-    let limit=Number(req.query.limit) || 9;
+    let limit=9;
     let skip= (page-1)*limit;
     apiData=apiData.skip(skip).limit(limit);
     const myData=await apiData;
